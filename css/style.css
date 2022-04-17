@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*notes: you MUST ADD A PARALLAX IMAGE*/
+
+
+body {
+    font-family: 'Nunito', sans-serif;
+    padding: 0 20px 0 20px;
+    background-image: url("../images/gradient.jpg");
+    background-position: cover;
+    /*background-color: #ab4313;
+    background-image:  url("../images/camera.jpg");
+    background-blend-mode: multiply;
+    background-repeat: repeat;*/
+}
+
+p {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.skew {
+    transform:skew(40deg, -10deg) scaleY(.8);
+    margin: 40px 0px;
+}
+
+.dark-mode {
+    background-color: #303030;
+    color: white;
+    border: white;
+}
+
+.dark-mode input, .dark-mode textarea {
+    background-color: #e0e0e0;
+    color: #303030;
+    border: white;
+}
+
+#darkmode {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+@keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-20px);
+    }
+  }
+
+  /*animate:hover? changed because of grading comments*/
+  .animate {
+    animation:
+      bounce 300ms
+      alternate infinite
+      cubic-bezier(.2, .65, .6, 1);
+  }
+
+nav {
+    display: inline;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 20px;
+    color: #224634;
+}
+
+ul li a:hover {
+    color: #def5f8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.grid img, .flex img {
+    width: 90%;
+}
+
+.flex img {
+    margin: 10px;
+}
+
+img {
+    padding: 5px;
+    border: 10px solid #800080;
+    border-radius: 5px;
+}
+
+.current{
+    background-color: #C14300;
+    margin-top: 5px;    
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+nav li {
+    background-color: #008080;
+    margin-top: 5px;    
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.current a{
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav li a{
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.bold {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+img:hover {
+    border: 10px solid #FFA500;
+}
+
+img:nth-child(3n) {
+    border: 10px dotted #008080;
+  }
+
+.skip {
+    left:-999px;
+    position:absolute;
+    z-index:-999;
+}
+
+.skip:focus {
+    left: 10px;
+}
+
+footer {
+    text-align: center;
+    font-size: 12px;
+}
+
+/*make sure to WAVE inspect the form*/
+input, textarea {
+    display: block;
+    border-radius: 5px;
+    border: 1px solid #878787;
+    margin-bottom: 7px;
+    margin-top: 3px;
+}
+
+/* she added this *focus in class, unsure if should keep*/
+/*!!!!!!!!!!! Look at her lecture example for interesting label format, box, and linkedin*/
+/*make sure to add aria label in linkedin*/
+/*Add link to page in Google Doc submission*/
+*:focus {
+    border: 2px solid #303030;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 45px;
+}
+
+legend {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+form {
+    border: 2px solid grey;
+    border-radius: 10px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-self: center;
+
+}
+
+/*make look nicer*/
+.flip-card {
+    background-color: transparent;
+    width: 200px;
+    height: 300px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+.flip-card:focus .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+.flip-card-outer, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+.flip-card-outer {
+    background-color: #bbb;
+    color: black;
+  }
+  
+.flip-card-back {
+    background-color: #008080;
+    color: white;
+    transform: rotateY(180deg);
+    padding-top: 10px;
+  }
+
+
+/*is mobile right size? mobile first*/
+@media screen and (min-width: 600px) {
+    body {
+        padding: 0 100px 0 100px;
+        background-image: none;
+        background-color: none;
+    }
+
+    /*.skip {
+        display: block;
+    }*/
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .flex img {
+        width: 200px;
+    }
+
+    img {
+        *margin: 10px;
+    }
+
+    form {
+        width: 330px;
+    }
+
+    img:hover {
+        transform: scale(1.15);
+      }
+
+    p {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    nav li a{
+        font-size: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+        .animate {
+            /*unsure if works*/
+            animation: none;
+        }
+
+        img:hover {
+            transform: none;
+        }
+    }
+        /*flip card back or overlay? check if prefers reduced motion works*/
+        .team-content-overlay {
+            -webkit-transition: 0 !important;
+            -o-transition: 0 !important;
+            transition: 0 !important;
+    }
+    

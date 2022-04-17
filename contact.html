@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <link rel="icon" href="images/favicon.ico"> -->
+	<link rel="stylesheet" href="css/html5reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/08dc08cfaf.js" crossorigin="anonymous"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LMLZ841V9C"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-LMLZ841V9C');
+	</script>
+	<title>Contact</title>
+</head>
+
+<body>
+	<header>
+		<a class = "skip" href="#main">Skip to Main Content</a>
+		<nav>
+			<ul>
+				<li><a href="./index.html">Index</a></li>
+				<li><a href="./about.html">About</a></li>
+				<li><a href="./portraits.html">Portraits</a></li>
+				<li><a href="./other.html">Other Images</a></li>
+                <li class="current"><a href="./contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<div>
+			<h1 id="main">Contact</h1>
+		</div>
+        <div id="form">
+            <form action="https://formspree.io/f/meqnzgpw" method="POST">
+              <fieldset>
+					<button id="darkmode">Dark Mode</button><br />
+                    <legend>Please fill out this form to contact me!</legend>
+                    <label for="name"><i class="fa-solid fa-signature"></i> Name:</label>
+                    <input type="text" name="name" id="name" placeholder="John Doe" pattern="[a-zA-Z0-9]+" required>
+                    <label for="email"><i class="fa-solid fa-envelope"></i> Email:</label>
+                    <input type="email" name="email" id="email" placeholder="johndoe@gmail.com" required>
+                    <label for="message"><i class="fa-solid fa-message"></i> Message:</label>
+                    <br>
+                    <textarea name="message" id="message" rows="15" cols="40" required>Enter your message here...</textarea>
+					<p class="bold">Type of inquiry:</p>
+					<label for="type_photoshoot">Schedule a photoshoot:</label><input type="checkbox" name="type" id="type_photoshoot" value="Schedule">
+					<label for="type_question">Ask a question:</label><input type="checkbox" name="type" id="type_question" value="Question" checked>
+					<label for="type_other">Other:</label><input type="checkbox" name="type" id="type_other" value="Other">
+					<label for="file">Send image:</label><input type="file" id="file" name="attachment" accept="image/png, image/jpeg">
+					<!--<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">!-->
+					<div class="g-recaptcha" data-sitekey="6Lc1wnsfAAAAABLw8aZF9IasRZjvWhkhOfn8J_IM"></div>
+                    <input type="submit" value="Submit">
+                </fieldset>
+              </form>
+        </div>
+	</main>
+
+	<footer>
+		<div>
+			<i class="fa-solid fa-laptop-code"></i>Made by Gwen McKee, 2022 <a href="https://www.linkedin.com/in/gwenmckee/" aria-label="Gwen's LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+		</div>
+	</footer>
+	
+	<!--unsure how to tell is recaptcha is working-->
+	<script type="text/javascript" src="js/script.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js?render={6Lc1wnsfAAAAABLw8aZF9IasRZjvWhkhOfn8J_IM}"></script>
+	<script>
+		grecaptcha.ready(function () {
+			grecaptcha.execute('{your-site-key}', {action: 'submit'}).then(function (token) {
+				console.info("got token: " + token);
+				document.getElementById('g-recaptcha-response').value = token;
+			});
+		});
+	</script>
+</body>
+</html>
